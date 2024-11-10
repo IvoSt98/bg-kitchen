@@ -8,3 +8,13 @@ class Reservations(models.Model):
     people = models.IntegerField(default=0)
     phone_number = models.CharField(max_length=15)
     message = models.TextField()
+
+    class Meta:
+        ordering = ["-date_and_time"]
+
+    def __str__(self):
+        return f"{self.user} made a reservation"
+
+    
+
+    
