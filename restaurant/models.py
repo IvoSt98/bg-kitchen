@@ -13,7 +13,7 @@ class Reservations(models.Model):
         ordering = ["-date_and_time"]
 
     def __str__(self):
-        return f"{self.user} made a reservation"
+        return f"{self.user} made a reservation for {self.people} guests "
 
     
 

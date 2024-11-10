@@ -20,5 +20,6 @@ from restaurant import views as test_views
 
 urlpatterns = [
     path('restaurant/', test_views.test, name='test'),
+    path('summernote/', include('django_summernote.urls')),
     path('admin/', admin.site.urls),
 ]
