@@ -19,12 +19,12 @@
 <body>
     <!-- Nav Bar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="{% url 'home' %}">Bulgarian Kitchen</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-       <div class="collapse navbar-collapse" id="navbarNav">
+        <a class="navbar-brand" href="{% url 'home' %}">Bulgarian Kitchen</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active ">
                     <a class="nav-link " href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
@@ -66,8 +66,9 @@
         </div>
     </nav>
 
-
+    <!-- Main -->
     <main>
+        <!-- Div for logged in on not user -->
         <div class="bg-light">
             {% if user.is_authenticated %}
             <p class="mx-auto" style="width: 250px;">You are currently logged in as {{ user }}</p>
@@ -79,24 +80,28 @@
         <!-- Content Goes here -->
         {% endblock content %}
     </main>
-
+    <!-- Footer -->
     <footer class="container-fluid ">
         <section>
+            <!-- Contact -->
             <div class="row text-center">
                 <div class="col-md">
                     <h5>Contact</h5>
                     <p></p>
                 </div>
+                <!-- Address -->
                 <div class="col-md">
                     <h5>Address</h5>
                     <p></p>
                 </div>
+                <!-- Social Media -->
                 <div class="col-md">
                     <h5>Social Media</h5>
                     <p></p>
                 </div>
             </div>
         </section>
+        <!-- Copy Rights Section -->
         <section>
             <div class="row">
                 <div class="col-12">
