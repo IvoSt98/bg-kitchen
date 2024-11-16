@@ -2,6 +2,70 @@
 
 {% block content %}
 
-<p>Here will be possible to make a reservation</p>
+<form>
+    <div class="row justify-content-center ">
+        <div class="col-5 col-md-4">
+            <label for="name">First & Last name</label>
+            <input type="text" class="form-control is-valid" id="name" required>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+          
+        </div>
+        <div class="col-6 col-md-3">
+            <label for="date&time">Date & Time</label>
+            <input type="datetime-local" class="form-control is-valid" id="date&time" name="date&time" required>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-5 col-md-4">
+            <label for="quantity">People(between 1 and 20)</label>
+            <input type="number" id="quantity" class="form-control is-invalid" name="quantity" min="1" max="20"
+                required>
+            <div id="validationServer03Feedback" class="invalid-feedback">
+                Please provide a valid city.
+            </div>
+        </div>
+
+        <div class="col-6 col-md-3">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" class="form-control is-invalid" name="phone" placeholder="08xxxxxxxx"
+                pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required>
+            <div id="validationServer04Feedback" class="invalid-feedback">
+                Please select a valid state.
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-8 col-md-5">
+            <label for="note">Message</label>
+            <textarea class="form-control is-invalid" id="note" placeholder="Here it's the place to add more information about your reservation!"
+                required></textarea>
+            <div id="validationServer05Feedback" class="invalid-feedback">
+                Please provide a valid zip.
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div>
+            <input class="form-check-input is-invalid" type="checkbox" value="" id="checkbox"
+                aria-describedby="checkbox" required>
+            <label class="form-check-label" for="confirmation">
+                Agree to terms and conditions
+            </label>
+            <div id="confirmation" class="invalid-feedback">
+                You must agree before submitting.
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div>
+            <button class="btn btn-primary" type="submit">Submit form</button>
+        </div>
+    </div>
+</form>
 
 {% endblock %}
