@@ -1,29 +1,41 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Your Reservations</h1>
-  <table>
-    <thead>
-      <tr>
-        <th>Date and Time</th>
-        <th>Number of People</th>
-        <th>Phone Number</th>
-        <th>Message</th>
-      </tr>
-    </thead>
-    <tbody>
-      {% for reservation in reservations %}
-        <tr>
-          <td>{{ reservation.date_and_time }}</td>
-          <td>{{ reservation.people }}</td>
-          <td>{{ reservation.phone_number }}</td>
-          <td>{{ reservation.message }}</td>
-        </tr>
-      {% empty %}
-        <tr>
-          <td colspan="5">You have no reservations yet.</td>
-        </tr>
-      {% endfor %}
-    </tbody>
-  </table>
+<div class="container">
+  <div class="row">
+    <div class="col-md mt-3 offset-sm-3 offset-md-3 offset-md-4">
+      <h1>Your Reservations</h1>
+    </div>
+  </div>
+  <div class="row">
+    <table class="table">
+      <div class="col-md mt-3 offset-sm-3 offset-md-3 offset-md-4">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Date and Time</th>
+            <th scope="col">Number of People</th>
+            <th scope="col">Phone Number</th>
+            <th scope="col">Message</th>
+          </tr>
+        </thead>
+      </div>
+      <div class="col-md mt-3 offset-sm-3 offset-md-3 offset-md-4">
+        <tbody>
+          {% for reservation in reservations %}
+          <tr scope="row">
+            <td>{{ reservation.date_and_time }}</td>
+            <td>{{ reservation.people }}</td>
+            <td>{{ reservation.phone_number }}</td>
+            <td class="modal-dialog modal-xl">{{ reservation.message }}</td>
+          </tr>
+          {% empty %}
+          <tr>
+            <td colspan="5">You have no reservations yet.</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </div>
+    </table>
+  </div>
+</div>
 {% endblock %}
