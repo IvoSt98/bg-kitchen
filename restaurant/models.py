@@ -14,10 +14,13 @@ returns a description of the reservation with the user's name and number of gues
 class Reservations(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     date_and_time = models.DateTimeField(auto_now_add=True)
+    name = models.CharField()
     people = models.IntegerField(default=0)
     phone_number = models.CharField(max_length=15)
     message = models.TextField()
     approved = models.BooleanField(default=False)
+    
+    
 
     class Meta:
         ordering = ["-date_and_time"]
